@@ -1,0 +1,51 @@
+{
+  "name": "interest-coach",
+  "version": "1.0.0",
+  "private": true,
+  "description": "An observable AI learning coach with real streaming, durable plans, and human confirmation.",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "packageManager": "pnpm@10.26.0",
+  "scripts": {
+    "dev": "modern dev",
+    "build": "modern build && node scripts/verify-build.mjs",
+    "start": "modern serve",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test tests/*.test.ts",
+    "check": "pnpm typecheck && pnpm test && pnpm build",
+    "eval": "tsx scripts/evaluate.ts",
+    "scan:secrets": "node scripts/scan-secrets.mjs",
+    "smoke": "node scripts/smoke.mjs",
+    "format": "biome format --write .",
+    "format:check": "biome format ."
+  },
+  "dependencies": {
+    "@langchain/core": "1.1.5",
+    "@langchain/langgraph": "1.0.5",
+    "@modern-js/runtime": "2.69.4",
+    "lucide-react": "0.468.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-markdown": "9.0.3",
+    "remark-gfm": "4.0.0",
+    "zod": "3.25.76"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@modern-js/app-tools": "2.69.4",
+    "@modern-js/server-runtime": "2.69.4",
+    "@modern-js/tsconfig": "2.69.4",
+    "@types/node": "24.10.1",
+    "@types/react": "18.3.11",
+    "@types/react-dom": "18.3.1",
+    "tsx": "4.20.6",
+    "typescript": "5.7.3"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": ["@swc/core", "esbuild"],
+    "overrides": {
+      "@langchain/langgraph-checkpoint": "1.0.0"
+    }
+  }
+}

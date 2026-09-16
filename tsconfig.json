@@ -1,0 +1,17 @@
+{
+  "extends": "@modern-js/tsconfig/base",
+  "compilerOptions": {
+    "strict": true,
+    "skipLibCheck": true,
+    "jsx": "react-jsx",
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "esModuleInterop": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "paths": { "@shared/*": ["shared/*"] },
+    "types": ["node"]
+  },
+  "include": ["src", "shared", "server", "tests", "scripts", "modern.config.ts"]
+}
